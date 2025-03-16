@@ -1,0 +1,26 @@
+@model UserInfo
+
+@{
+    ViewBag.Title = "Katılımcı Detaylar";
+}
+
+@{
+    var className = Model.Participate == true ? "success" : "danger";
+}
+
+<main class="text-center">
+    <h1 class="h4">Katılımcı Detaylar</h1>
+    <div class="card my-2">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <span class="badge text-bg-@className">@(Model.Participate == true ? "Katılıyor" : "Katılmıyor")</span>
+            </li>
+            <li class="list-group-item">İsim: @Model.Name</li>
+            <li class="list-group-item">E-posta: @Model.Email</li>
+            <li class="list-group-item">Telefon: @Model.Number</li>
+            <li class="list-group-item">
+                <a asp-controller="Meeting" asp-action="Participants" class="btn btn-outline-@className">Katılımcıları Listele</a>
+            </li>
+        </ul>
+    </div>
+</main>

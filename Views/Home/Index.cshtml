@@ -1,0 +1,20 @@
+@{
+    ViewBag.Title = "Anasayfa";
+}
+
+@model MeetingInfo
+
+<main class="text-center"> 
+    <h3>@ViewData["Time"]</h3>
+    <h3>Lütfen katılım durumunuzu belirtiniz</h3>
+    
+    <div class="card my-2">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Etkinlik: @Model.Name</li>
+            <li class="list-group-item">Tarih: @Model.Date</li>
+            <li class="list-group-item">Yer: @Model.Location</li>
+            <li class="list-group-item">@Model.NumberOfPeople Katılımcı</li>
+        </ul>
+    </div>
+<a asp-controller="Meeting" asp-action="Application" class="btn btn-small btn-outline-success">Başvur</a>
+</main>

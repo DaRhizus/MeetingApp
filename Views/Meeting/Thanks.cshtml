@@ -1,0 +1,16 @@
+@{
+    ViewBag.Title = "Toplantı Bilgileri";
+}
+
+@model UserInfo
+
+<main class="text-center">
+    <h3>Toplantı bilgileri:</h3>
+    @if((bool)Model.Participate){
+        <p>@Model.Name katılımınız için teşekkür ederiz :) </p>
+    } else{
+        <p>@Model.Name katılmadığınız için üzgünüz :( </p>
+    }
+    <p>Bu toplantıya @ViewBag.total kişi katılmaktadır</p>
+    <a asp-controller="Meeting" asp-action="Participants" class="btn btn-small btn-outline-danger">Katılımcıları Listele</a>
+</main>
